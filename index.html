@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AtCoder ガチャ</title>
+  <link href="honoka/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>あっとこーだー ガチャ</h1>
+    <p>AtCoder problemsからjsonを貰ってガチャします</p>
+    <p>試作なのでjsonは予め保存したものを使っています</p>
+    <p>ユーザーごとにやる機能は付けていません</p>
+    <p>使用ライブラリ : 
+      <a href="https://jquery.com/" target="_blank">jQuery</a>, 
+      <a href="https://github.com/windyakin/Honoka" target="_blank">Honoka</a>
+    </p>
+    <input type="button" class="btn btn-info" value="ガチャ" onclick="gacha()">
+    <div id="result"></div>
+  </div>
+  <!-- scripts -->
+  <script src="jquery-2.2.3.min.js"></script>
+  <script src="honoka/js/bootstrap.min.js"></script>
+  <script src="problems.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
