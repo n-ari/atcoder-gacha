@@ -13,4 +13,11 @@ gacha = ->
     if cont.id is cont_id
       cont_name = cont.name
       break
-  $("#result").html("<a href=\"#{url}\" target=\"_blank\">#{cont_name}「#{pro.name}」(#{pro.solvers} solved)</a>")
+  nstr = "<a href=\"#{url}\" target=\"_blank\">#{cont_name}「#{pro.name}」(#{pro.solvers} solved)</a>"
+  bef = $("#result").html().split("<br>")
+  if bef.length > 30
+    bef.pop()
+    bef.pop()
+    bef.push("")
+  bef.unshift(nstr)
+  $("#result").html(bef.join("<br>"))

@@ -6,7 +6,7 @@ main = function() {};
 window.addEventListener("load", main);
 
 gacha = function() {
-  var cont, cont_id, cont_name, i, len, pro, rd, ref, url;
+  var bef, cont, cont_id, cont_name, i, len, nstr, pro, rd, ref, url;
   rd = Math.floor(Math.random() * window.problems.length);
   pro = problems[rd];
   url = "http://" + pro.contest + ".contest.atcoder.jp/tasks/" + pro.id;
@@ -20,5 +20,13 @@ gacha = function() {
       break;
     }
   }
-  return $("#result").html("<a href=\"" + url + "\" target=\"_blank\">" + cont_name + "「" + pro.name + "」(" + pro.solvers + " solved)</a>");
+  nstr = "<a href=\"" + url + "\" target=\"_blank\">" + cont_name + "「" + pro.name + "」(" + pro.solvers + " solved)</a>";
+  bef = $("#result").html().split("<br>");
+  if (bef.length > 30) {
+    bef.pop();
+    bef.pop();
+    bef.push("");
+  }
+  bef.unshift(nstr);
+  return $("#result").html(bef.join("<br>"));
 };
